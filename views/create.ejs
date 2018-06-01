@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include partials/head.ejs %>
+    <% include partials/navbar.ejs %>
+</head>
+<body>
+    <p class="col-sm-4 col-md-offset-4" style="font-family: consolas; font-size: 40px;">Create your own post</p>
+
+    <form action="/create" method="post" class="col-sm-6 col-md-offset-3">
+        <hr> <h3>Post</h3> <hr>
+        <div class="form-group">
+            <label for="post_title">title</label>
+            <input type="text" class="form-control" name="post_title"  placeholder="A concise title">
+        </div>
+
+        <div class="form-group">
+            <label for="content">Content</label>
+            <input type="text" class="form-control" name="content"  placeholder="Shower thoughts">
+        </div>
+
+        <div class="form-group">
+            <label for="author">author</label>
+            <input type="text" class="form-control" name="author"  placeholder="pen_name">
+        </div>
+
+        <div class="form-group">
+            <label for="category">category</label>
+            <input type="text" class="form-control" name="category"  placeholder="tags">
+        </div>
+        <button type="submit" class="btn btn-default btn-info" >Publish</button>
+    </form>
+
+    <% include partials/footer.ejs %>
+    <% include partials/scripts.ejs %>
+</body>
+</html>
