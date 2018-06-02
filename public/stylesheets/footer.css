@@ -1,0 +1,42 @@
+/*
+https://css-tricks.com/couple-takes-sticky-footer/#article-header-id-1
+https://stackoverflow.com/questions/16552397/css-how-to-add-white-space-before-elements-content
+https://stackoverflow.com/questions/5467605/add-a-space-after-an-element-using-after
+*/
+
+.navbar-fixed-top {
+    /*
+    height: 200px;
+    background-color: transparent !important;
+    background-color: transparent;
+    background-image: none;*/
+    /*box-shadow: none;*/
+    /*border: none;*/
+    color: white;
+    z-index: 100;
+    /*mine*/
+    border-radius: 5px 20px 5px;
+    margin-bottom: 50%;
+}
+
+body::before {
+    content: "\00a0";
+}
+
+body {
+    min-height: 100%;
+    padding: 5%;
+    padding-bottom: 75px;
+  }
+
+footer {
+    /*height: 50px;*/
+    background-color: #ffffff;
+    margin-top: -50px;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    opacity: 1;
+    background-color: rgba(230, 224, 224, 0.486);
+}

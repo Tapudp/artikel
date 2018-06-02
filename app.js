@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const upload = multer({ dest: './public/uploads' });
@@ -17,7 +18,7 @@ mongoose.connect(keys.mongoDB.dbURI)
     });
 
 app.set('view engine', 'ejs');
-
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(morgan('dev'));

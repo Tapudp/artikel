@@ -3,6 +3,7 @@
 <head>
     <% include partials/head.ejs %>
     <% include partials/navbar.ejs %>
+    
 </head>
 <body>
     <p class="col-sm-6 col-md-offset-4" style="font-family: consolas; font-size: 40px;">Blogposts listed here</p>
@@ -10,7 +11,7 @@
     <!-- <div class="media-body"> -->
     <div class="container">
     <div class="row">
-        <div class="col-xs-6">
+        <div class="col-md-8 col-md-offset-2">
             <% for(post in posts){ %>
                 <!-- Title -->
                 <h1 class="mt-4 posttitle"><%= posts[post].title %></h1>
@@ -26,33 +27,6 @@
                 <p>tags# <%= posts[post].category %></p>
                 <hr>
             <% } %>
-        </div>
-        <div class="col-xs-3" style="float: right;">
-            <h1>About Divyesh</h1>
-
-            <p>
-                Real Social Open source
-                <a target="_blank" style="color: #4078c0;" href="https://github.com/Tapudp" r="this.style.color='#7dbbe6'"   onMouseOut="this.style.color='#333'"><i class="fab fa-github" style="font-size: 30px;"></i></a>
-            </p>
-
-           <p>onMouseOve
-               follow me on
-                <a target="_blank" style="color: #3b5998;" href="https://www.facebook.com/pddivyesh" onMouseOver="this.style.color='#25d366'"   onMouseOut="this.style.color='#3B5998'"><i class="fab fa-facebook" style="font-size: 30px;"></i></a>
-            </p>
-            <p>
-                Stories
-            <a target="_blank" style="color: #cd486b;" href="https://www.instagram.com/pbdivyesh" onMouseOver="this.style.color='#fccc63'"   onMouseOut="this.style.color='#cd486b'"><i class="fab fa-instagram" style="font-size: 30px;"></i></a>
-            </p>
-
-            <p>
-                HotchPotch
-            <a target="_blank" style="color: #4c68d7;" href="https://twitter.com/AflaatunTapudo"  onMouseOver="this.style.color='#1dcaff'"   onMouseOut="this.style.color='#4c68d7'"><i class="fab fa-twitter" style="font-size: 30px;"></i></a>
-            </p>
-
-            <p>
-                My University
-            <a target="_blank" style="color: #ff6314;" href="https://reddit.com/user/tapu_buoy" onMouseOver="this.style.color='#d7d7d7'"   onMouseOut="this.style.color='#ff6314'"><i class="fab fa-reddit" style="font-size: 30px;"></i></a>
-            </p>
         </div>
     </div>
     </div>
