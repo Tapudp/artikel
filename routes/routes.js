@@ -58,4 +58,28 @@ router.get('/blog', (req, res) => {
         });
 });
 
+router.get('/:titlename', (req, res) => {
+
+    // https://stackoverflow.com/questions/37325246/fetch-from-multiple-separate-collections-with-express-and-mongodb
+    // res.render('individual', {
+    //     title: title,
+    //     description: description,
+    //     category: category
+    // })
+    //https://www.google.co.in/search?ei=M9UnW6DgD4vUvASxs6e4BQ&q=how+to+access+each+object+from+mongodb+render+them+on+separate+pages&oq=how+to+access+each+object+from+mongodb+render+them+on+separate+pages&gs_l=psy-ab.3...377440.392333.0.392512.55.45.1.0.0.0.604.6528.0j12j12j1j1j1.27.0....0...1c.1.64.psy-ab..31.9.1965...33i22i29i30k1j33i160k1.0.rdzpIDRhLTY
+    Blog.find({})
+        .then(posts => {
+            for(post in posts){
+                if(posts[post].title == req.params.titlename){
+                    console.log(req.params.titlename+' post has been found and will be rendered shortly');
+                    //res.send("<p>"+posts[post].content+"</p><br><hr>"+posts[post].author);
+                    res.render('individual', {post: posts[post]});
+                }
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
+});
+
 module.exports = router;
